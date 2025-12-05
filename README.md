@@ -1,62 +1,98 @@
-📚 SmartLibrary – Akıllı Kütüphane Yönetim Sistemi
+📚 SmartLibrary
+Java OOP + SQLite ile Akıllı Kütüphane Yönetim Sistemi
+<p align="center"> <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/512/external-library-university-flaticons-flat-flat-icons-2.png" width="140"/> </p>
+⭐ Proje Hakkında
 
-SmartLibrary, öğrenci – kitap – ödünç alma işlemlerini yönetmek için tasarlanmış basit bir Java uygulamasıdır.
-Proje; Modüler yapı, Model–Repository–Database mimarisi ve genişletilebilir sınıf tasarımı ile hazırlanmıştır.
+SmartLibrary, Java OOP, JDBC ve SQLite kullanılarak hazırlanmış basit bir kütüphane yönetim sistemidir.
+Bu sistemde kitaplar, öğrenciler ve ödünç alma işlemleri yönetilebilir.
 
-🚀 Özellikler
+Proje;
+✔ Nesneye Dayalı Programlama (OOP)
+✔ Sınıflar, kalıtım ve kompozisyon
+✔ JDBC CRUD işlemleri
+✔ PreparedStatement
+✔ SQLite veritabanı yönetimi
+✔ Konsol tabanlı menü
 
-📘 Kitap ekleme, silme ve listeleme
+gibi kavramları uygulamalı olarak göstermektedir.
 
-🧑‍🎓 Öğrenci ekleme ve görüntüleme
+🧱 Proje İçeriği
+📁 Sınıflar
 
-🔄 Kitap ödünç verme ve iade alma
+Book → Kitap bilgilerini tutar
 
-📦 Temiz proje yapısı (model – repository – database – main)
+Student → Öğrenci bilgilerini tutar
 
-🧱 Kolayca genişletilebilir mimari
+Loan → Ödünç işlemlerini tutar
 
-📁 Proje Yapısı
-SmartLibrary/
-│
-├── README.md
-└── src/
-    ├── SmartLibrary.java
-    │
-    ├── model/
-    │   ├── Book.java
-    │   ├── Student.java
-    │   └── Loan.java
-    │
-    ├── repository/
-    │   ├── BookRepository.java
-    │   ├── StudentRepository.java
-    │   └── LoanRepository.java
-    │
-    └── database/
-        └── Database.java
+Database → SQLite bağlantı yönetimi
 
-🛠️ Kullanılan Teknolojiler
+Repository Class’lar
 
-☕ Java (Nesne Yönelimli Programlama)
+BookRepository
 
-📦 Modüler klasör yapısı
+StudentRepository
 
-📝 Temiz ve anlaşılır kodlama
+LoanRepository
 
-▶️ Çalıştırma
+Bu sınıflar üzerinde tam CRUD işlemleri uygulanır.
 
-Proje klasörünü VS Code’da aç
+🗄️ Veritabanı Yapısı
+📘 books tablosu
+Alan	Tür
+id	INTEGER PRIMARY KEY AUTOINCREMENT
+title	TEXT
+author	TEXT
+year	INTEGER
+🎓 students tablosu
+Alan	Tür
+id	INTEGER PRIMARY KEY AUTOINCREMENT
+name	TEXT
+department	TEXT
+📦 loans tablosu
+Alan	Tür
+id	INTEGER PRIMARY KEY AUTOINCREMENT
+bookId	INTEGER
+studentId	INTEGER
+dateBorrowed	TEXT
+dateReturned	TEXT
+🎮 Uygulama Menüsü
+===== SmartLibrary =====
+1. Kitap Ekle
+2. Kitapları Listele
+3. Öğrenci Ekle
+4. Öğrencileri Listele
+5. Kitap Ödünç Ver
+6. Ödünç Listesini Görüntüle
+7. Kitap Geri Teslim Al
+8. Çıkış
+Seçiminiz:
 
-SmartLibrary.java dosyasını aç
+🔧 Kurulum ve Çalıştırma
+1️⃣ Projeyi indirin
+git clone https://github.com/KULLANICI_ADI/SmartLibrary
 
-Üstteki Run tuşuna bas
+2️⃣ SQLite JDBC driver’ını ekleyin
 
-🌟 Geliştirmeye Açık Kısımlar
+sqlite-jdbc.jar → lib klasörüne ekleyin.
 
-Kitap stok sistemi
+3️⃣ Projeyi çalıştırın
+javac -cp ".;lib/sqlite-jdbc.jar" -d bin src/*.java
+java -cp ".;bin;lib/sqlite-jdbc.jar" Main
 
-Geç teslim ceza sistemi
+🧩 Kullanılan Teknolojiler
 
-Verilerin JSON dosyasına kaydedilmesi
+☕ Java 17+
 
-Basit bir konsol menüsü
+🗄️ SQLite
+
+🔌 JDBC
+
+🧱 OOP, Sınıflar, Inheritance, Composition
+
+📦 ArrayList & Koleksiyonlar
+
+👤 Geliştirici
+
+Ceyhun Emre Şener
+Öğrenci No: 20230108065
